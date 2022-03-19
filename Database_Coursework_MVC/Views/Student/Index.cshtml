@@ -31,10 +31,12 @@
                 @Html.DisplayFor(modelItem => item.StudentName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id= item.StudentId  }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.StudentId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.StudentId }) |
+                
             </td>
         </tr>
 }
     </tbody>
 </table>
+<!-- <button asp-page-handler="Delete" asp-route-id="item.StudentId" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm">Delete</button> !-->

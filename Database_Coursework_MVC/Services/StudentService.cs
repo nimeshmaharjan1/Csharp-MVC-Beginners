@@ -73,8 +73,7 @@ namespace Database_Coursework_MVC.Services
                     {
                         connection.Open();
                         command.Connection = connection;
-                        int id = student.StudentId;
-                        command.CommandText = "delete from student where student_id = "+id+"";
+                        command.CommandText = "delete from student where student_id = "+student.StudentId+"";
                         /*,'"++"'*/
                         //FOR INSERTING, UPDATING AND DELETING DATA
                         command.ExecuteNonQuery();
