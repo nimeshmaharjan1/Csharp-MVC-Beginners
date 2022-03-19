@@ -2,7 +2,40 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div>
+    <h1 style="opacity: 0.2;font-size: 7rem;font-weight:bold" class="mt-4 display-4">HOME</h1>
+</div>
+<div class="row mt-4 mb-4 justify-content-center align-items-center">
+    <div class="col-md-6">
+        <div class="card text-white bg-dark">
+            <div class="card-header text-center">
+                <h4 class="font-weight-bold">Simple Web Forms</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a class="nav-link" asp-area="" asp-controller="Student" asp-action="Index">Student</a>
+                </li>
+                <li class="list-group-item"><a class="nav-link" asp-area="" asp-controller="Teacher" asp-action="Index">Teacher</a></li>
+                <li class="list-group-item"><a class="nav-link" asp-area="" asp-controller="Module" asp-action="Index">Module</a></li>
+                <li class="list-group-item"><a class="nav-link" asp-area="" asp-controller="Fee" asp-action="Index">Fee</a></li>
+                <li class="list-group-item"><a class="nav-link" asp-area="" asp-controller="Address" asp-action="Index">Address</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card text-white bg-dark">
+            <div class="card-header text-center">
+                <h4 class="font-weight-bold">Complex Web Forms</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a class="nav-link" asp-area="" asp-controller="Student" asp-action="Index">Student</a>
+                </li>
+                <li class="list-group-item"><a class="nav-link" asp-area="" asp-controller="Teacher" asp-action="Index">Teacher</a></li>
+                <li class="list-group-item"><a class="nav-link" asp-area="" asp-controller="Module" asp-action="Index">Module</a></li>
+                <li class="list-group-item"><a class="nav-link" asp-area="" asp-controller="Fee" asp-action="Index">Fee</a></li>
+                <li class="list-group-item"><a class="nav-link" asp-area="" asp-controller="Address" asp-action="Index">Address</a></li>
+            </ul>
+        </div>
+    </div>
 </div>

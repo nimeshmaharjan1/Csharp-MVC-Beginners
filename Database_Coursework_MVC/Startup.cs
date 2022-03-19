@@ -27,11 +27,17 @@ namespace Database_Coursework_MVC
         {
             services.AddTransient<IStudentRepo, StudentService>();
             services.AddTransient<IFeeDepartmentRepo, FeeService>();
+            services.AddTransient<ITeacherRepo, TeacherService>();
+            services.AddTransient<IModuleRepo, ModuleService>();
+            services.AddTransient<IAddressRepo, AddressService>();
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddMvc().AddRazorPagesOptions(options =>
             {
                 options.Conventions.AddPageRoute("/Student/Index", "");
                 options.Conventions.AddPageRoute("/Fee/Index", "");
+                options.Conventions.AddPageRoute("/Teacher/Index", "");
+                options.Conventions.AddPageRoute("/Address/Index", "");
+                options.Conventions.AddPageRoute("/Module/Index", "");
             });
         }
 
