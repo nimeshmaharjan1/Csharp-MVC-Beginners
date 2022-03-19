@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace Database_Coursework_MVC.Controllers
 {
-    public class FeeController : Controller
+    public class ModuleController : Controller
     {
-        private IFeeDepartmentRepo feeService;
-        public FeeController(IFeeDepartmentRepo _feeService)
+        IModuleRepo moduleService;
+        public ModuleController (IModuleRepo _moduleService)
         {
-            feeService = _feeService;
+            moduleService = _moduleService;
         }
         public IActionResult Index()
         {
-            IEnumerable<FeeModel> fee = feeService.GetAllFee();
-            return View(fee);
+            IEnumerable<ModuleModel> module = moduleService.GetAllModules();
+            return View(module);
         }
         public IActionResult Create()
         {
@@ -26,33 +26,33 @@ namespace Database_Coursework_MVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(FeeModel fee)
+        public IActionResult Create(ModuleModel module)
         {
-            feeService.AddFee(fee);
+            moduleService.AddModule(module);
             return RedirectToAction(nameof(Index));
         }
         public IActionResult Edit(int id)
         {
-            FeeModel fee = feeService.GetFeeById(id);
-            return View(fee);
+            ModuleModel module = moduleService.GetModuleById(id);
+            return View(module);
         }
 
         [HttpPost]
-        public IActionResult Edit(FeeModel fee)
+        public IActionResult Edit(ModuleModel module)
         {
-            feeService.EditFee(fee);
+            moduleService.EditModule(module);
             return RedirectToAction(nameof(Index));
         }
         public IActionResult Delete(int id)
         {
-            FeeModel fee = feeService.GetFeeById(id);
-            return View(fee);
+            ModuleModel module = moduleService.GetModuleById(id);
+            return View(module);
         }
 
         [HttpPost]
-        public IActionResult Delete(FeeModel fee)
+        public IActionResult Delete(ModuleModel module)
         {
-            feeService.DeleteFee(fee);
+            moduleService.DeleteModule(module);
             return RedirectToAction(nameof(Index));
         }
     }

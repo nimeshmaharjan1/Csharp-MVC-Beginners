@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Database_Coursework_MVC.Models.AddressModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="opacity: 0.2;font-size: 6rem;font-weight:bold;">Address List</h1>
+<table class="table mt-4">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Address ID
+            </th>
+            <th>
+                Address
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AddressId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AddressName)
+                </td>
+                <td class="text-center">
+                    <button class="btn btn-outline-primary">@Html.ActionLink("Edit", "Edit", new { id = item.AddressId }) </button>
+                    <button class="btn btn-outline-danger">@Html.ActionLink("Delete", "Delete", new { id = item.AddressId })</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p class="mt-1 text-center">
+    <a class="btn btn-outline-success" asp-action="Create">ADD</a>
+</p>
