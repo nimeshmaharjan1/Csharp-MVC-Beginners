@@ -26,10 +26,12 @@ namespace Database_Coursework_MVC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IStudentRepo, StudentService>();
+            services.AddTransient<IFeeDepartmentRepo, FeeService>();
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddMvc().AddRazorPagesOptions(options =>
             {
                 options.Conventions.AddPageRoute("/Student/Index", "");
+                options.Conventions.AddPageRoute("/Fee/Index", "");
             });
         }
 
@@ -57,7 +59,7 @@ namespace Database_Coursework_MVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Student}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

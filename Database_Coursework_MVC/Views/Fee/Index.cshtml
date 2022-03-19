@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Database_Coursework_MVC.Models.FeeModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FeeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FeeAmount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeeAmount)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.FeeId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.FeeId})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
