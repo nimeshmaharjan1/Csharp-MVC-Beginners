@@ -46,7 +46,9 @@ namespace Database_Coursework_MVC.Controllers
         public IActionResult Delete(int id)
         {
             AddressModel address = addressService.GetAddressById(id);
-            return View(address);
+            addressService.DeleteAddress(address);
+            return RedirectToAction(nameof(Index));
+            //return View(address);
         }
 
         [HttpPost]

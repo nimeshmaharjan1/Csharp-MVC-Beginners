@@ -46,7 +46,9 @@ namespace Database_Coursework_MVC.Controllers
         public IActionResult Delete(int id)
         {
             ModuleModel module = moduleService.GetModuleById(id);
-            return View(module);
+            moduleService.DeleteModule(module);
+            return RedirectToAction(nameof(Index));
+            //return View(module);
         }
 
         [HttpPost]

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Database_Coursework_MVC.Models.TeacherModuleModel>
+
+@{
+    ViewData["Title"] = "TeacherDetails";
+}
+
+<h1>Module Details of Teacher</h1>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>
+                Teacher ID
+            </th>
+            <th>
+                Module Code
+            </th>
+            <th>
+                Module Name
+            </th>
+            <th>
+                Credit Hours
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TeacherId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModuleCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModuleName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreditHours)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

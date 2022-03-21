@@ -36,7 +36,6 @@ namespace Database_Coursework_MVC.Controllers
             StudentModel student = studentService.GetStudentById(id);
             return View(student);
         }
-
         [HttpPost]
         public IActionResult Edit(StudentModel student)
         {
@@ -46,7 +45,9 @@ namespace Database_Coursework_MVC.Controllers
         public IActionResult Delete(int id)
         {
             StudentModel student = studentService.GetStudentById(id);
-            return View(student);
+            studentService.DeleteStudent(student);
+            return RedirectToAction(nameof(Index));
+            //   return View(student);
         }
 
         [HttpPost]

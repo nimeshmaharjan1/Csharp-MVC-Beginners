@@ -26,7 +26,7 @@ namespace Database_Coursework_MVC.Services
                     {
                         connection.Open();
                         command.Connection = connection;
-                        command.CommandText = "INSERT INTO module(module_code, module_name, credit_hours) VALUES (" + module.ModuleCode + ",'" + module.ModuleName + "', "+module.CreditHours+")";
+                        command.CommandText = "INSERT INTO module(module_code, module_name) VALUES (" + module.ModuleCode + ",'" + module.ModuleName + "')";
                         /*,'"++"'*/
                         //FOR INSERTING, UPDATING AND DELETING DATA
                         command.ExecuteNonQuery();
@@ -72,7 +72,7 @@ namespace Database_Coursework_MVC.Services
                     {
                         connection.Open();
                         command.Connection = connection;
-                        command.CommandText = "UPDATE module SET module_name ='" + module.ModuleName + "', credit_hours = "+module.CreditHours+" WHERE module_code = " + module.ModuleCode + "";
+                        command.CommandText = "UPDATE module SET module_name ='" + module.ModuleName + "' WHERE module_code = " + module.ModuleCode + "";
                         /*,'"++"'*/
                         //FOR INSERTING, UPDATING AND DELETING DATA
                         command.ExecuteNonQuery();
@@ -95,15 +95,14 @@ namespace Database_Coursework_MVC.Services
                     connection.Open();
                     command.Connection = connection;
                     command.BindByName = true;
-                    command.CommandText = "select module_code, module_name, credit_hours from module";
+                    command.CommandText = "select module_code, module_name from module";
                     OracleDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                     {
                         ModuleModel module = new ModuleModel
                         {
                             ModuleCode = Convert.ToInt32(dataReader["module_code"]),
-                            ModuleName = dataReader["module_name"].ToString(),
-                            CreditHours = Convert.ToInt32(dataReader["credit_hours"])
+                            ModuleName = dataReader["module_name"].ToString()
                         };
                         moduleList.Add(module);
                     }
@@ -122,13 +121,12 @@ namespace Database_Coursework_MVC.Services
                     con.Open();
                     cmd.Connection = con;
                     cmd.BindByName = true;
-                    cmd.CommandText = "Select module_code, module_name, credit_hours from module where module_code = " + moduleId + "";
+                    cmd.CommandText = "Select module_code, module_name from module where module_code = " + moduleId + "";
                     OracleDataReader rdr = cmd.ExecuteReader();
                     while (rdr.Read())
                     {
                         module.ModuleCode = Convert.ToInt32(rdr["module_code"]);
                         module.ModuleName = rdr["module_name"].ToString();
-                        module.CreditHours = Convert.ToInt32(rdr["credit_hours"]);
                     }
                 }
             }

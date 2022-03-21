@@ -14,9 +14,6 @@
             <th>
                 Module Name
             </th>
-            <th>
-                Credit Hours
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -29,9 +26,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ModuleName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreditHours)
                 </td>
                 <td>
                     <button class="btn btn-outline-primary">@Html.ActionLink("Edit", "Edit", new { id = item.ModuleCode })</button>
