@@ -1,15 +1,31 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div>
-    <h1 style="opacity: 0.2;font-size: 7rem;font-weight:bold" class="mt-4 display-4">HOME</h1>
+<style>
+    .card-header h1, h4 {
+        opacity: 0.4 !important;
+        margin-top: 0.5rem;
+    }
+</style>
+<div class="col-md-12 mt-4">
+    <div class="card">
+        <div class="card-header text-center text-white bg-dark">
+            <h1 style="opacity: 0.2;font-size: 3rem; font-weight: bold">
+                Welcome
+            </h1>
+        </div>
+        <div class="card-body">
+            <p class="text-justify">
+                This web application has been created to manage various CRUD operations i.e. create, read, update and delete between entities and models in an college environment. Please feel free to surf through the different web forms listed in the website.
+            </p>
+        </div>
+    </div>
 </div>
-<div class="row mt-4 mb-4 justify-content-center align-items-center">
+<div class="row mt-5 mb-4 justify-content-center align-items-center">
     <div class="col-md-6">
         <div class="card text-white bg-dark">
             <div class="card-header text-center">
-                <h4 class="font-weight-bold">Simple Web Forms</h4>
+                <h4 class="font-weight-bold">Basic Web Forms</h4>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
