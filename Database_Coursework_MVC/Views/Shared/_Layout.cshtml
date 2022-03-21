@@ -13,30 +13,35 @@
         body {
             font-family: 'Montserrat', sans-serif !important;
         }
+
         .nav-item a {
-            transition: all 0.5s;
+            transition: all 0.4s;
             margin: auto 1rem !important;
+            font-size: 0.7rem;
         }
+
         .nav-item:hover {
             border-bottom: 1px solid white;
             margin-top: -1px !important;
         }
+
             .nav-item:hover a {
                 color: lightblue !important;
+                font-size: 0.7rem;
             }
         .navbar-brand {
             transition: all 1s !important;
         }
-        .navbar-brand:hover {
-            color: lightblue !important;
-        }
+
+            .navbar-brand:hover {
+                color: lightblue !important;
+            }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container p-2">
-               <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -44,19 +49,22 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav mr-auto ml-auto nav-bar">
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Student" asp-action="Index">Student</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Teacher" asp-action="Index">Teacher</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Student" asp-action="Index">STUDENT</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Module" asp-action="Index">Module</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Teacher" asp-action="Index">TEACHER</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Fee" asp-action="Index">Fee</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Module" asp-action="Index">MODULE</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Address" asp-action="Index">Address</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Fee" asp-action="Index">FEE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Address" asp-action="Index">ADDRESS</a>
                         </li>
                     </ul>
                 </div>

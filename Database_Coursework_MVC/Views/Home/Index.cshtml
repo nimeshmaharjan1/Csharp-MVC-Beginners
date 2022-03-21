@@ -2,26 +2,39 @@
     ViewData["Title"] = "Home Page";
 }
 <style>
+    * {
+        scroll-behavior: smooth;
+    }
+
     .card-header h1, h4 {
         opacity: 0.4 !important;
         margin-top: 0.5rem;
     }
+
+    .card {
+        box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+        filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
+    }
 </style>
-<div class="col-md-12 mt-4">
-    <div class="card">
-        <div class="card-header text-center text-white bg-dark">
-            <h1 style="opacity: 0.2;font-size: 3rem; font-weight: bold">
-                Welcome
-            </h1>
+<div class="card mt-4">
+    <div class="card-header bg-dark text-white text-center">
+        <h1 class="font-weight-bold">Welcome</h1>
+    </div>
+    <div class="card-body">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center">
+                <img class="text-center" style="height: 200px" src="../Assets/logo.svg" alt="Logo"/>
+            </div>
+            <div class="col-md-6">
+                <p class="text-justify" style="line-height:1.9em">
+                    This web-based application has been created to manage various CRUD operations i.e. create, read, update and delete between entities and models in an college environment. Please feel free to surf through the different web forms listed in the website.
+                </p>
+            </div>
         </div>
-        <div class="card-body">
-            <p class="text-justify">
-                This web application has been created to manage various CRUD operations i.e. create, read, update and delete between entities and models in an college environment. Please feel free to surf through the different web forms listed in the website.
-            </p>
-        </div>
+
     </div>
 </div>
-<div class="row mt-5 mb-4 justify-content-center align-items-center">
+<div class="row mt-5 mb-4 justify-content-center">
     <div class="col-md-6">
         <div class="card text-white bg-dark">
             <div class="card-header text-center">
@@ -45,12 +58,14 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    <a class="nav-link" asp-area="" asp-controller="TeacherModule" asp-action="Index">Teacher Module</a>
+                    <a class="nav-link" asp-area="" asp-controller="TeacherModule" asp-action="Index">Teacher Module Details</a>
                 </li>
-                <li class="list-group-item"><a class="nav-link" asp-area="" asp-controller="Teacher" asp-action="Index">Teacher</a></li>
-                <li class="list-group-item"><a class="nav-link" asp-area="" asp-controller="Module" asp-action="Index">Module</a></li>
-                <li class="list-group-item"><a class="nav-link" asp-area="" asp-controller="Fee" asp-action="Index">Fee</a></li>
-                <li class="list-group-item"><a class="nav-link" asp-area="" asp-controller="Address" asp-action="Index">Address</a></li>
+                <li class="list-group-item">
+                    <a class="nav-link" asp-area="" asp-controller="StudentFee" asp-action="Index">Student Fee Payment Details</a>
+                </li>
+                <li class="list-group-item">
+                    <a class="nav-link" asp-area="" asp-controller="StudentAssignment" asp-action="Index">Student Assignment Details</a>
+                </li>
             </ul>
         </div>
     </div>

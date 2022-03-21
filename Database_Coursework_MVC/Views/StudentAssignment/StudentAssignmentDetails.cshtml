@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Database_Coursework_MVC.Models.StudentAssignmentModel>
+
+@{
+    ViewData["Title"] = "StudentAssignmentDetails";
+}
+
+<h1>Details of Assignment</h1>
+<table class="table mt-4">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Student ID
+            </th>
+            <th>
+                Module Code
+            </th>
+            <th>
+                Assignment Type
+            </th>
+            <th>
+                Grade
+            </th>
+            <th>
+                Status
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModuleCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignmentType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

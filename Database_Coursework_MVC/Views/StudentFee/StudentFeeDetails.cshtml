@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Database_Coursework_MVC.Models.StudentFeeModel>
+
+@{
+    ViewData["Title"] = "StudentFeeDetails";
+}
+
+<h1>Details of Fee Payment</h1>
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>
+                Student ID
+            </th>
+            <th>
+                Fee ID
+            </th>
+            <th>
+                Fee Name
+            </th>
+            <th>
+                Payment Status
+            </th>
+            <th>
+                Paid Amount
+            </th>
+            <th>
+                Payment Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FeeId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FeeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Paid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaidAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentDate)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
