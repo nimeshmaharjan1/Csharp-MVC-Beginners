@@ -33,6 +33,7 @@ namespace Database_Coursework_MVC
             services.AddTransient<ITeacherModuleRepo, TeacherModuleService>();
             services.AddTransient<IStudentFeeRepo, StudentFeeService>();
             services.AddTransient<IStudentAssignmentRepo, StudentAssignmentService>();
+            services.AddTransient<IDepartmentRepo, DepartmentService>();
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddMvc().AddRazorPagesOptions(options =>
             {
@@ -44,6 +45,7 @@ namespace Database_Coursework_MVC
                 options.Conventions.AddPageRoute("/TeacherModule/Index", "");
                 options.Conventions.AddPageRoute("/StudentFee/Index", "");
                 options.Conventions.AddPageRoute("/StudentAssignment/Index", "");
+                options.Conventions.AddPageRoute("/Department/Index", "");
             });
         }
 

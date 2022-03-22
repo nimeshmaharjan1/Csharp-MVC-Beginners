@@ -9,4 +9,13 @@
     <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.50" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Assets\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\icon.png" />
+    <None Include="wwwroot\assets\logo.svg" />
+  </ItemGroup>
+
 </Project>

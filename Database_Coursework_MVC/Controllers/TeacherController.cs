@@ -47,15 +47,21 @@ namespace Database_Coursework_MVC.Controllers
         public IActionResult Delete(int id)
         {
             TeacherModel teacher = teacherService.GetTeacherById(id);
-            teacherService.DeleteTeacher(teacher);
-            return RedirectToAction(nameof(Index));
-            //return View(teacher);
+            return View(teacher);
         }
         [HttpPost]
-        public IActionResult Delete(TeacherModel teacher)
+        public ActionResult Delete(int id, TeacherModel teacherModel)
         {
-            teacherService.DeleteTeacher(teacher);
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                TeacherModel teacher = teacherService.GetTeacherById(id);
+                teacherService.DeleteTeacher(teacher);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }

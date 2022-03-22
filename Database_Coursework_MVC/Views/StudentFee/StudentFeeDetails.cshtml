@@ -49,7 +49,7 @@
                     @Html.DisplayFor(modelItem => item.PaidAmount)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.PaymentDate)
+                    @item.PaymentDate.ToString("yyyy-MM-dd")
                 </td>
             </tr>
         }

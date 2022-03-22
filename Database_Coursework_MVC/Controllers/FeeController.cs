@@ -46,16 +46,23 @@ namespace Database_Coursework_MVC.Controllers
         public IActionResult Delete(int id)
         {
             FeeModel fee = feeService.GetFeeById(id);
-            feeService.DeleteFee(fee);
-            return RedirectToAction(nameof(Index));
-            //return View(fee);
+            //feeService.DeleteFee(fee);
+            //return RedirectToAction(nameof(Index));
+            return View(fee);
         }
-
         [HttpPost]
-        public IActionResult Delete(FeeModel fee)
+        public ActionResult Delete(int id, FeeModel feeModel)
         {
-            feeService.DeleteFee(fee);
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                FeeModel fee = feeService.GetFeeById(id);
+                feeService.DeleteFee(fee);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }

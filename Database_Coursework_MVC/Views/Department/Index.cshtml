@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Database_Coursework_MVC.Models.DepartmentModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Department List</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartmentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartmentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartmentContact)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartmentId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartmentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartmentContact)
+                </td>
+                <td>
+                    <button class="btn btn-outline-primary">@Html.ActionLink("Edit", "Edit", new { id = item.DepartmentId })</button> |
+                    <button class="btn btn-outline-danger">@Html.ActionLink("Delete", "Delete", new { id = item.DepartmentId })</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a class="btn btn-outline-success" asp-action="Create">Create New</a>
+</p>

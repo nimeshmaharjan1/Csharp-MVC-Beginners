@@ -10,14 +10,14 @@ namespace Database_Coursework_MVC.Controllers
 {
     public class AddressController : Controller
     {
-        private IAddressRepo addressService;
-        public AddressController (IAddressRepo _addressService)
+        private readonly IAddressRepo _addressService;
+        public AddressController (IAddressRepo addressService)
         {
-            addressService = _addressService;
+            _addressService = addressService;
         }
         public IActionResult Index()
         {
-            IEnumerable<AddressModel> address = addressService.GetAllAddresses();
+            IEnumerable<AddressModel> address = _addressService.GetAllAddresses();
             return View(address);
         }
         public IActionResult Create()
@@ -28,34 +28,41 @@ namespace Database_Coursework_MVC.Controllers
         [HttpPost]
         public IActionResult Create(AddressModel address)
         {
-            addressService.AddAddress(address);
+            _addressService.AddAddress(address);
             return RedirectToAction(nameof(Index));
         }
         public IActionResult Edit(int id)
         {
-            AddressModel address = addressService.GetAddressById(id);
+            AddressModel address = _addressService.GetAddressById(id);
             return View(address);
         }
 
         [HttpPost]
         public IActionResult Edit(AddressModel address)
         {
-            addressService.EditAddress(address);
+            _addressService.EditAddress(address);
             return RedirectToAction(nameof(Index));
         }
         public IActionResult Delete(int id)
         {
-            AddressModel address = addressService.GetAddressById(id);
-            addressService.DeleteAddress(address);
-            return RedirectToAction(nameof(Index));
-            //return View(address);
+            AddressModel address = _addressService.GetAddressById(id);
+            return View(address);
         }
 
+        // POST: DeleteTestController/Delete/5
         [HttpPost]
-        public IActionResult Delete(AddressModel address)
+        public ActionResult Delete(int id, AddressModel addressModel)
         {
-            addressService.DeleteAddress(address);
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                AddressModel address = _addressService.GetAddressById(id);
+                _addressService.DeleteAddress(address);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }
